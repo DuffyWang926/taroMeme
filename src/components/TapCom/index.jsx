@@ -27,7 +27,7 @@ export default class TapCom extends Component{
 
   onTapClick = (val) =>{
     const { url, type } = val
-    Taro.navigateTo({
+    Taro.redirectTo({
       url
     });
     this.props.changeHomeData({ tapCurrent:type})

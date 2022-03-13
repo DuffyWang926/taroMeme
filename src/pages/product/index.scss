@@ -7,9 +7,14 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
         .productImg{
             width: 300px;
             height: 250px;
+        }
+        .productTip{
+            padding:10px 0;
+            font-size: 16px;
         }
     }
     .productList{

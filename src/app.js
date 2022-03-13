@@ -21,6 +21,8 @@ const store = configStore();
 //     return this.props.children
 //   }
 // }
+// "appid": "ttd858aee54761fc2c01",
+// "appid": "wxc0ad257664f4cecb",
 
 const App = ({ children }) =>{
   return (

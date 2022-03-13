@@ -4,8 +4,8 @@ import { logError } from '../utils/error'
 
 // import {baseUrl} from '../../config'
 
-// const baseUrl= 'http://123.56.142.18:3000/'
-const baseUrl= 'http://192.168.0.104:3000'
+const baseUrl= 'https://www.mengshikejiwang.top/api'
+// const baseUrl= 'http://127.0.0.1:3000/api'
 
 
 export default {

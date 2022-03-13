@@ -5,7 +5,10 @@ import './index.scss'
 import { connect } from "../../utils/connect";
 import {
   getHomeDetail,
+  changeHomeData
+
 } from "../../actions/home";
+
 // import { AtTabBar } from "taro-ui";
 import SearchCom from "../../components/SearchCom";
 import HomeItem from "../../components/HomeItem";
@@ -26,23 +29,23 @@ const mapDispatchToProps = (dispatch) =>{
     getHomeDetail:(payload)=>{
       dispatch(getHomeDetail(payload));
     },
+    changeHomeData:(payload)=>{
+      dispatch(changeHomeData(payload));
+    }
     
   }
 }
 @connect( mapStateToProps , mapDispatchToProps )
 export default class Index extends Component {
 
-  componentDidMount(){
+  
+  onLoad(){
     this.props.getHomeDetail()
   }
-  
+  changeTab= ()=>{
+    this.props.changeHomeData({ tapCurrent:1})
+  }
 
-  
-
-  
-
-
-  
 
   
 
@@ -56,7 +59,8 @@ export default class Index extends Component {
       return res
     })
     const searchProps ={
-      url:'/pages/search/index'
+      url:'/pages/search/index',
+      changeTab:this.changeTab
     }
     
     return (

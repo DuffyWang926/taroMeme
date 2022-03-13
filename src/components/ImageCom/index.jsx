@@ -1,6 +1,5 @@
-import Taro from "@tarojs/taro";
 import { View, Image } from "@tarojs/components";
-
+import Taro, { getCurrentInstance } from '@tarojs/taro'
 import "./index.scss";
 const reMenImgA = require("../../assets/product/1.jpg")
 const reMenImgB = require("../../assets/product/2.jpg")
@@ -16,6 +15,7 @@ const ImageCom = ({props}) => {
     Taro.navigateTo({
       url:`/pages/product/index?id=${imgId}`
     });
+    
   }
   let urlEnd = ''
   if(imgUrl == 1){

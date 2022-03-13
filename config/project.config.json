@@ -3,7 +3,6 @@
     "projectname": "myApp",
     "description": "",
     "appid": "wxc0ad257664f4cecb",
-    
     "setting": {
         "urlCheck": false,
         "es6": false,
@@ -45,18 +44,7 @@
     "compileType": "miniprogram",
     "condition": {
         "miniprogram": {
-            "current": 1647154786865,
-            "list": [
-                {
-                    "id": 1647154786865,
-                    "name": "普通",
-                    "pathName": "pages/product/index",
-                    "query": "id=1642412089894",
-                    "scene": "011001",
-                    "launchFrom": "search_used_list",
-                    "location": ""
-                }
-            ]
+            "current": -1
         }
     }
 }

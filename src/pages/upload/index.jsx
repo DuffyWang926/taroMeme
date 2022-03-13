@@ -111,7 +111,9 @@ export default class Index extends Component {
         that.setState({
           imgUrl:filePath
         })
-        const url = 'http://127.0.0.1:3000/upload'
+        // const url = 'http://127.0.0.1:3000/api/upload'
+        const url = 'https://www.mengshikejiwang.top/api/upload'
+        
         Taro.uploadFile({
           url,
           filePath,

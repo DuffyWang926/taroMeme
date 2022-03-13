@@ -9,6 +9,8 @@ import {
 import SearchCom from "../../components/SearchCom";
 import ImageCom from "../../components/ImageCom";
 import TapCom from "../../components/TapCom";
+import NoDataCom from "../../components/NoDataCom";
+
 const homeImg = require("../../assets/thanks.jpg")
 const mapStateToProps = (state)=>{
   const { search } = state
@@ -38,6 +40,7 @@ export default class Index extends Component {
     })
 
   }
+ 
   
 
   render () {
@@ -60,9 +63,13 @@ export default class Index extends Component {
         <View className='searchTop'>
           <SearchCom props={searchProps}></SearchCom>
         </View>
-        <View className='searchList'>
-          { imgListView }
-        </View>
+        { imgList.length > 0 ? 
+          <View className='searchList'>
+            { imgListView}
+          </View>
+          : <NoDataCom/>
+        }
+        
         <TapCom ></TapCom>
       </View>
     )

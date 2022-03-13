@@ -6,13 +6,14 @@ import "./index.scss";
 
 
 const SearchCom = ({props}) => {
-  const { url, searchClick } = props
+  const { url, searchClick, changeTab } = props
   const [inputVal, setInputVal] = useState("");
   const boxClick = () =>{
     if(url){
-      Taro.navigateTo({
+      Taro.redirectTo({
         url
       });
+      changeTab()
     }
   }
   const inputChange = (e) =>{

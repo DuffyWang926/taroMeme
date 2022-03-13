@@ -72,7 +72,6 @@
         }
       case "CHANGEHOMEDATA":
         const { tapCurrent } = action.payload
-        debugger
         return {
           ...state,
           tapCurrent

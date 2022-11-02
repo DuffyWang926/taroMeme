@@ -10,4 +10,15 @@
       })
     }
   }
+
+  export const deleteProduct = (payload) => {
+    return dispatch => {
+      api.get('/delete',payload).then((res) => {
+        dispatch({
+          type: 'DELETEPRODUCT',
+          payload: res
+        })
+      })
+    }
+  }
   

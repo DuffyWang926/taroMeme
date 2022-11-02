@@ -2,3 +2,12 @@ page{
     height: 100%;
     width: 100%;
 }
+.inputBorder{
+    border: 1px solid #999;
+    border-radius: 40px;
+    flex: 1;
+    input{
+        text-indent: 20px;
+    }
+
+}

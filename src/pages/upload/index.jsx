@@ -1,12 +1,12 @@
 import Taro from "@tarojs/taro";
 import { Component } from 'react'
-import { View, Input, Text, RadioGroup, Radio, Image } from '@tarojs/components'
+import { View, Input, Text, RadioGroup, Radio, Image, Button } from '@tarojs/components'
 // import { AtIcon, AtButton, AtToast } from "taro-ui";
 import './index.scss'
 import { connect } from "../../utils/connect";
 import {
-  getHomeDetail,
-} from "../../actions/home";
+  deleteProduct,
+} from "../../actions/product";
 const mapStateToProps = (state)=>{
   const { home } = state
   const { name } = home
@@ -17,8 +17,8 @@ const mapStateToProps = (state)=>{
 }
 const mapDispatchToProps = (dispatch) =>{
   return {
-    getHomeDetail:(payload)=>{
-      dispatch(getHomeDetail(payload));
+    deleteProduct:(payload)=>{
+      dispatch(deleteProduct(payload));
     }
   }
 }
@@ -54,7 +54,8 @@ export default class Index extends Component {
       name:'dd',
       radioList,
       radioValue:'dd',
-      theme:'dd'
+      theme:'dd',
+      imgId:''
     }
 
     
@@ -111,8 +112,8 @@ export default class Index extends Component {
         that.setState({
           imgUrl:filePath
         })
-        // const url = 'http://127.0.0.1:3000/api/upload'
-        const url = 'https://www.mengshikejiwang.top/api/upload'
+        const url = 'http://127.0.0.1:3000/api/upload'
+        // const url = 'https://www.mengshikejiwang.top/api/upload'
         
         Taro.uploadFile({
           url,
@@ -144,6 +145,18 @@ export default class Index extends Component {
       fail: e => {
         console.error(e)
       }
+    })
+  }
+  onIdChange = (e) =>{
+    let value = e.target.value
+    this.setState({
+      imgId:value
+    })
+  }
+  onDelete = ()=>{
+    const { imgId } = this.state
+    this.props.deleteProduct({
+      id:imgId
     })
   }
 
@@ -198,6 +211,10 @@ export default class Index extends Component {
           <View  >
             <Image src={imgUrl} bindtap="previewImg"></Image>
           </View>
+        </View>
+        <View>
+          <Input className="inputBorder" onChange={this.onIdChange}/>
+          <Button onClick={this.onDelete}>删除</Button>
         </View>
         
       </View>

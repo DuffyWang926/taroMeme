@@ -16,6 +16,13 @@
             padding:10px 0;
             font-size: 16px;
         }
+        .productAd{
+            padding:10px 20px;
+            background: #ffc98e;
+            border-radius: 60px;
+            font-size: 36px;
+            color:#fe6562;
+        }
     }
     .productList{
         width: 100%;
@@ -30,6 +37,10 @@
             height: 250px;
         }
         
+    }
+    .adView{
+        width: 100%;
+        min-height: 200px;
     }
 }
 
